@@ -1,0 +1,23 @@
+name: configuring es lint
+on:
+  push:
+    branches:
+      -b1
+
+jobs:
+  Setting-up-eslint:
+   runs-on: ubuntu-latest
+   name: Setting up eslint
+   steps:
+   - name: Checkout code
+     uses: actions/checkout@v3
+   - name: Set up Node.js  
+     uses: actions/setup-node@v3
+     with:
+        node-version: '14'
+   - name: Install Dependencies
+     run: npm install
+   - name: Run ES Lint
+     run: npx eslint index.js
+   - name: Finished
+     run: echo 'Workflow finished'
