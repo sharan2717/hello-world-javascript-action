@@ -2,7 +2,7 @@ name: configuring es lint
 on:
   push:
     branches:
-      -b1
+      - b1
 
 jobs:
   Setting-up-eslint:
